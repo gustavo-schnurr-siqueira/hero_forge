@@ -9,6 +9,7 @@ import Controler.generalControler;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.hero;
 
@@ -2027,8 +2028,8 @@ public class central_JFrame extends javax.swing.JFrame {
     boolean success = false;
     
     generalControler validatingTheHero = new generalControler();
-    success = validatingTheHero.validatingHero(name_text_field.getText(),combo_specialization.getSelectedIndex());
-        
+    success = validatingTheHero.validatingHero(name_text_field.getText(),combo_specialization.getSelectedIndex(),gender);
+    if(success == true){
         // - STRING to INT --     
         sLifePoints = life_text_label.getText();
         lifePoints=Integer.parseInt(sLifePoints);
@@ -2128,7 +2129,9 @@ public class central_JFrame extends javax.swing.JFrame {
             
             combo_specialization.setSelectedIndex(0);
         
-        
+    }else{
+        JOptionPane.showMessageDialog(null,"The fields 'Name', 'Specialization' and 'Gender' needs to be filled.","Attention",JOptionPane.WARNING_MESSAGE);
+    }        
     }//GEN-LAST:event_gen_hero_butActionPerformed
 
     private void strg_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strg_plusActionPerformed

@@ -24,7 +24,17 @@ public class hero {
             gender;
 //----------------METHODS-------------
     
-    public boolean permitHeroCreation(String name,int hp,int maxHp,int mana,int maxMana,int physDmg,int magDmg,int armor,int hitChance,int stamina,int str,int dex,int mag,int cons,int heroSpec,int gender){
+    public boolean permitHeroCreation(String name,int heroSpec,int gender){
+        this.name=name;        
+        this.heroSpec=heroSpec;
+        this.gender=gender;
+        
+        return true;        
+    }
+    
+    public hero creation (String name,int hp,int maxHp,int mana,int maxMana,int physDmg,int magDmg,int armor,int hitChance,int stamina,int str,int dex,int mag,int cons,int heroSpec,int gender){
+        hero newHero = new hero();
+        
         this.name=name;
         this.hp=hp;
         this.maxHp=maxHp;
@@ -42,7 +52,7 @@ public class hero {
         this.heroSpec=heroSpec;
         this.gender=gender;
         
-        return true;        
+        return newHero;
     }
     
     

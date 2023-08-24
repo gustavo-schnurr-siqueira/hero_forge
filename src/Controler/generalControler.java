@@ -37,7 +37,7 @@ private int valueBonus3;
     
 //-------------MÉTODOS----------------------
 
- public boolean validatingHero(String name,int hp,int maxHp,int mana,int maxMana,int physDmg,int magDmg,int armor,int hitChance,int stamina,int str,int dex,int mag,int cons,int heroSpec,int gender) {
+ public boolean validatingHero(String name,int heroSpec,int gender) {
         
      if(name.equals(null) || heroSpec <=0){
          
@@ -46,7 +46,7 @@ private int valueBonus3;
     }else{
         hero newHero = new hero();
         
-    return newHero.permitHeroCreation(name, hp, maxHp, mana, maxMana, physDmg, magDmg, armor, hitChance, stamina, str, dex, mag, cons, heroSpec, gender);
+    return newHero.permitHeroCreation(name, heroSpec, gender);
     
     }
  }
@@ -246,5 +246,4 @@ private int valueBonus3;
 
     
    
-}
 }
