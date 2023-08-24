@@ -22,13 +22,32 @@ public class hero {
             cons,
             heroSpec,
             gender;
-
+//----------------METHODS-------------
     
-
+    public boolean permitHeroCreation(String name,int hp,int maxHp,int mana,int maxMana,int physDmg,int magDmg,int armor,int hitChance,int stamina,int str,int dex,int mag,int cons,int heroSpec,int gender){
+        this.name=name;
+        this.hp=hp;
+        this.maxHp=maxHp;
+        this.mana=mana;
+        this.maxMana=maxMana;
+        this.physDmg=physDmg;
+        this.magDmg=magDmg;
+        this.armor=armor;
+        this.hitChance=hitChance;
+        this.stamina=stamina;
+        this.str=str;
+        this.dex=dex;
+        this.mag=mag;
+        this.cons=cons;
+        this.heroSpec=heroSpec;
+        this.gender=gender;
+        
+        return true;        
+    }
     
     
     
-    
+//-------------------------------------    
 //------------GETS AND SETS-----------------------------------------------------
     public String getName() {
         return name;
