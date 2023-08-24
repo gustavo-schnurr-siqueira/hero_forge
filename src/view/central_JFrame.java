@@ -2059,20 +2059,23 @@ public class central_JFrame extends javax.swing.JFrame {
     
         sSpec = combo_specialization.getSelectedItem().toString();
         
-        sName = name_text_field.getText();
-        newHero.setName(sName);
-        newHero.setHeroSpec(heroClass);
-        newHero.setStr(strg);
-        newHero.setMag(mag);
-        newHero.setDex(dex);
-        newHero.setCons(cons);
-        newHero.setArmor(armor);
-        newHero.setHp(lifePoints);
-        newHero.setPhysDmg(physDmg);
-        newHero.setMagDmg(magDmg);
-        newHero.setHitChance(hitChance);
+        newHero.creation(sName, mag, mag, mana, maxMana, physDmg, magDmg, armor, hitChance, mana, strg, dex, mag, cons, heroClass, gender);
         
-        heroVet[pos]=newHero;
+        
+//        sName = name_text_field.getText();
+//        newHero.setName(sName);
+//        newHero.setHeroSpec(heroClass);
+//        newHero.setStr(strg);
+//        newHero.setMag(mag);
+//        newHero.setDex(dex);
+//        newHero.setCons(cons);
+//        newHero.setArmor(armor);
+//        newHero.setHp(lifePoints);
+//        newHero.setPhysDmg(physDmg);
+//        newHero.setMagDmg(magDmg);
+//        newHero.setHitChance(hitChance);
+//        
+//        heroVet[pos]=newHero;
         
         System.out.println(heroVet[pos].getName());
         
