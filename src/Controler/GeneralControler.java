@@ -1,9 +1,9 @@
 
 package Controler;
 
-import model.hero;
+import model.Hero;
 
-public class generalControler {
+public class GeneralControler {
     
     //-----------------------------------
 //--Hero Variables----------------------   
@@ -34,23 +34,26 @@ private int bonus3;
 private int valueBonus1;
 private int valueBonus2;
 private int valueBonus3;
+
+Hero completeHero = new Hero();
+Hero refferenceHero = new Hero();
     
 //-------------MÉTODOS----------------------
 
- public boolean validatingHero(String name,int heroSpec,int gender) {
+ //----------creatingHero---------------------------
+ 
+ public Hero createHero(String name, int heroEspec,int gender, int mag,int strg, int dex,int cons, int lifePoints,int mana, int hitChance,int physDmg, int magDmg, int armor){
+    if (name.equals(null) || heroSpec <=0){
         
-     if(name.equals(null) || heroSpec <=0){
-         
-         return false;
-         
-    }else{
-        hero newHero = new hero();
-        
-    return newHero.permitHeroCreation(name, heroSpec, gender);
-    
+        return null;
+            
+        }else{
+        Hero newHero = new Hero(name,heroEspec,gender,mag,strg,dex,cons,lifePoints,mana,hitChance,physDmg,magDmg,armor);
+                        
+        return newHero.heroCreation(newHero);
     }
- }
-
+}
+ 
 //------------------------------------------
     public String getName() {
         return name;
@@ -243,6 +246,7 @@ private int valueBonus3;
     public void setValueBonus3(int valueBonus3) {
         this.valueBonus3 = valueBonus3;
     }
+    
 
     
    

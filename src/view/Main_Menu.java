@@ -75,20 +75,20 @@ public class Main_Menu extends javax.swing.JFrame {
         main_menu_backgroundLayout.setHorizontalGroup(
             main_menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(main_menu_backgroundLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(147, 147, 147)
                 .addGroup(main_menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(exit_program)
                     .addComponent(start_but))
-                .addContainerGap(772, Short.MAX_VALUE))
+                .addContainerGap(695, Short.MAX_VALUE))
         );
         main_menu_backgroundLayout.setVerticalGroup(
             main_menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, main_menu_backgroundLayout.createSequentialGroup()
-                .addContainerGap(552, Short.MAX_VALUE)
+                .addContainerGap(547, Short.MAX_VALUE)
                 .addComponent(start_but, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73)
                 .addComponent(exit_program, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+                .addGap(101, 101, 101))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,7 +107,7 @@ public class Main_Menu extends javax.swing.JFrame {
 
     private void start_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_butActionPerformed
         
-        central_JFrame creator = new central_JFrame();
+        Central_JFrame creator = new Central_JFrame();
         creator.setSize(1020,920);
         creator.setVisible(true);
         creator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

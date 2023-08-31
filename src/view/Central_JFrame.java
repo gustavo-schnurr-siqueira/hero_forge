@@ -5,20 +5,20 @@
  */
 package view;
 
-import Controler.generalControler;
+import Controler.GeneralControler;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.hero;
+import model.Hero;
 
 /**
  *
  * @author 311100469
  */
 
-public class central_JFrame extends javax.swing.JFrame {
+public class Central_JFrame extends javax.swing.JFrame {
   
     
     
@@ -49,7 +49,7 @@ public class central_JFrame extends javax.swing.JFrame {
                 mana,
                 maxMana,
                 gender=0,
-                heroClass=0;
+                heroEspec=0;
         
         
     
@@ -67,11 +67,10 @@ public class central_JFrame extends javax.swing.JFrame {
             sMana,
             sMaxMana,
             sName,
-            sSpec,
+            sEspec,
             sGender;
     
-    hero[] heroVet = new hero [10];
-    hero newHero = new hero();
+    Hero[] heroVet = new Hero [10];    
     int pos = 0;
     
 //----------Weapon Gen Variables--------------    
@@ -83,7 +82,7 @@ public class central_JFrame extends javax.swing.JFrame {
     
     
     
-    public central_JFrame() {
+    public Central_JFrame() {
         initComponents();
     }
 
@@ -103,7 +102,7 @@ public class central_JFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         name_text_field = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        combo_specialization = new javax.swing.JComboBox<>();
+        combo_especialization = new javax.swing.JComboBox<>();
         female_button = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -302,11 +301,11 @@ public class central_JFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trajan Pro", 0, 24)); // NOI18N
         jLabel2.setText("specialization");
 
-        combo_specialization.setFont(new java.awt.Font("Trajan Pro", 0, 18)); // NOI18N
-        combo_specialization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "Mage", "Warrior", "Rogue" }));
-        combo_specialization.addActionListener(new java.awt.event.ActionListener() {
+        combo_especialization.setFont(new java.awt.Font("Trajan Pro", 0, 18)); // NOI18N
+        combo_especialization.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "Mage", "Warrior", "Rogue" }));
+        combo_especialization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_specializationActionPerformed(evt);
+                combo_especializationActionPerformed(evt);
             }
         });
 
@@ -366,7 +365,7 @@ public class central_JFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(combo_specialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo_especialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(female_button, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -413,7 +412,7 @@ public class central_JFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(combo_specialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(combo_especialization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -694,7 +693,7 @@ public class central_JFrame extends javax.swing.JFrame {
         edit_hero_but.setFont(new java.awt.Font("Trajan Pro", 0, 24)); // NOI18N
         edit_hero_but.setText("EDIT HERO");
 
-        return_main_menu.setFont(new java.awt.Font("Trajan Pro", 0, 14)); // NOI18N
+        return_main_menu.setFont(new java.awt.Font("Trajan Pro", 0, 24)); // NOI18N
         return_main_menu.setText("Return");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -706,32 +705,30 @@ public class central_JFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(return_main_menu)
-                .addGap(30, 30, 30)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(85, 85, 85)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(gen_hero_but)
                 .addGap(102, 102, 102)
                 .addComponent(edit_hero_but)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jSeparator1)
-                        .addContainerGap())
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(return_main_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(39, Short.MAX_VALUE))))
+                .addGap(33, 33, 33)
+                .addComponent(return_main_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gen_hero_but)
                     .addComponent(edit_hero_but))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1)
+                .addContainerGap())
         );
 
         jPanel2.add(jPanel7);
@@ -1740,7 +1737,7 @@ public class central_JFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Specialization", "Gender", "Magic", "Strenght", "Dexterity", "Constituion", "Life", "Mana", "Hit Chance"
+                "Name", "Especialization", "Gender", "Strength", "Magic", "Dexterity", "Constituion", "Life", "Mana", "Hit Chance", "Phys. Dmg.", "Mag. Dmg.", "Armor"
             }
         ));
         jScrollPane1.setViewportView(heroTable);
@@ -1750,16 +1747,16 @@ public class central_JFrame extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 894, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 983, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(40, 40, 40)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Heros' Table", jPanel10);
@@ -1855,13 +1852,13 @@ public class central_JFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gen_weapon_but1ActionPerformed
 
-    private void combo_specializationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_specializationActionPerformed
+    private void combo_especializationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_especializationActionPerformed
     xpPointsToDistLabel.setText("5");
     xpPointsToDist=5;
     
-    if (combo_specialization.getSelectedItem()=="Mage"  ){
+    if (combo_especialization.getSelectedItem()=="Mage"  ){
             
-            heroClass = 1;
+            heroEspec = 1;
         
             strg=5;
             dex=8;
@@ -1892,9 +1889,9 @@ public class central_JFrame extends javax.swing.JFrame {
             hit_chance_points_label.setText("30");
             
            
-        }else if(combo_specialization.getSelectedItem()=="Rogue"){
+        }else if(combo_especialization.getSelectedItem()=="Rogue"){
             
-            heroClass = 2;
+            heroEspec = 2;
             
             strg=5;
             dex=15;
@@ -1925,9 +1922,9 @@ public class central_JFrame extends javax.swing.JFrame {
             hit_chance_points_label.setText("100");
 
             
-        }else if(combo_specialization.getSelectedItem()=="Warrior"){
+        }else if(combo_especialization.getSelectedItem()=="Warrior"){
             
-            heroClass = 3;
+            heroEspec = 3;
             
             strg=15;
             dex=5;
@@ -1960,7 +1957,7 @@ public class central_JFrame extends javax.swing.JFrame {
             
         }else{
             
-            heroClass = 0;
+            heroEspec = 0;
             
             strg=0;
             dex=0;
@@ -1998,17 +1995,17 @@ public class central_JFrame extends javax.swing.JFrame {
     
                 
         
-    }//GEN-LAST:event_combo_specializationActionPerformed
+    }//GEN-LAST:event_combo_especializationActionPerformed
 
     private void female_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_female_buttonActionPerformed
         gender = 1;
         sGender = "Female";
         
-        if(combo_specialization.getSelectedItem() == "Mage"){
+        if(combo_especialization.getSelectedItem() == "Mage"){
          hero_picture.setIcon(mageFemaleIcon);
-        }else if(combo_specialization.getSelectedItem() == "Rogue"){
+        }else if(combo_especialization.getSelectedItem() == "Rogue"){
         hero_picture.setIcon(rogueFemaleIcon);
-        }else if(combo_specialization.getSelectedItem() == "Warrior")
+        }else if(combo_especialization.getSelectedItem() == "Warrior")
         hero_picture.setIcon(warriorFemaleIcon);
     }//GEN-LAST:event_female_buttonActionPerformed
 
@@ -2016,88 +2013,123 @@ public class central_JFrame extends javax.swing.JFrame {
         gender = 2;
         sGender = "Male";
         
-        if(combo_specialization.getSelectedItem() == "Mage"){
+        if(combo_especialization.getSelectedItem() == "Mage"){
          hero_picture.setIcon(mageMaleIcon);
-        }else if(combo_specialization.getSelectedItem() == "Rogue"){
+        }else if(combo_especialization.getSelectedItem() == "Rogue"){
         hero_picture.setIcon(rogueMaleIcon);
-        }else if(combo_specialization.getSelectedItem() == "Warrior")
+        }else if(combo_especialization.getSelectedItem() == "Warrior")
         hero_picture.setIcon(warriorMaleIcon);
     }//GEN-LAST:event_male_button2ActionPerformed
 
     private void gen_hero_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gen_hero_butActionPerformed
-    boolean success = false;
+   
+   
     
-    generalControler validatingTheHero = new generalControler();
-    success = validatingTheHero.validatingHero(name_text_field.getText(),combo_specialization.getSelectedIndex(),gender);
-    if(success == true){
-        // - STRING to INT --     
-        sLifePoints = life_text_label.getText();
-        lifePoints=Integer.parseInt(sLifePoints);
-        
-        sMaxLife = max_life_text_label.getText();
-        maxLife=Integer.parseInt(sMaxLife);
-        
-        sMana = mana_text_label.getText();
-        mana = Integer.parseInt(sMana);
-        
-        sMaxMana = max_mana_text_label.getText();
-        maxMana = Integer.parseInt(sMaxMana);
-        
-        sArmor = armor_points_label.getText();
-        armor = Integer.parseInt(sArmor);
-        
-        sPhysDmg = phys_dmg_points_label.getText();
-        physDmg = Integer.parseInt(sPhysDmg);
-        
-        sMagDmg = mag_dmg_points_label.getText();
-        magDmg = Integer.parseInt(sMagDmg);
-        
-        sHitChance = hit_chance_points_label.getText();
-        hitChance = Integer.parseInt(sHitChance);
-        
-    //-----------------    
+    Hero newHero = new Hero(); 
+    GeneralControler genCont = new GeneralControler();
     
-        sSpec = combo_specialization.getSelectedItem().toString();
-        
-        newHero.creation(sName, mag, mag, mana, maxMana, physDmg, magDmg, armor, hitChance, mana, strg, dex, mag, cons, heroClass, gender);
-        
-        
+    newHero = genCont.createHero(name_text_field.getText(),                                 
+                                 heroEspec,
+                                 gender,
+                                 mag,
+                                 strg,
+                                 dex,
+                                 cons,
+                                 lifePoints,
+                                 mana,
+                                 hitChance,
+                                 physDmg,
+                                 magDmg,
+                                 armor
+                                 );
+    
+    
+    //newHeroTwo = genCont.validatingHero(name_text_field.getText(),combo_specialization.getSelectedIndex(),gender);
+    
+    if(newHero != null){
+//        // - STRING to INT --
 //        sName = name_text_field.getText();
-//        newHero.setName(sName);
-//        newHero.setHeroSpec(heroClass);
-//        newHero.setStr(strg);
-//        newHero.setMag(mag);
-//        newHero.setDex(dex);
-//        newHero.setCons(cons);
-//        newHero.setArmor(armor);
-//        newHero.setHp(lifePoints);
-//        newHero.setPhysDmg(physDmg);
-//        newHero.setMagDmg(magDmg);
-//        newHero.setHitChance(hitChance);
 //        
-//        heroVet[pos]=newHero;
+//        sLifePoints = life_text_label.getText();
+//        lifePoints=Integer.parseInt(sLifePoints);
+//        
+//        sMaxLife = max_life_text_label.getText();
+//        maxLife=Integer.parseInt(sMaxLife);
+//        
+//        sMana = mana_text_label.getText();
+//        mana = Integer.parseInt(sMana);
+//        
+//        sMaxMana = max_mana_text_label.getText();
+//        maxMana = Integer.parseInt(sMaxMana);
+//        
+//        sArmor = armor_points_label.getText();
+//        armor = Integer.parseInt(sArmor);
+//        
+//        sPhysDmg = phys_dmg_points_label.getText();
+//        physDmg = Integer.parseInt(sPhysDmg);
+//        
+//        sMagDmg = mag_dmg_points_label.getText();
+//        magDmg = Integer.parseInt(sMagDmg);
+//        
+//        sHitChance = hit_chance_points_label.getText();
+//        hitChance = Integer.parseInt(sHitChance);
+//        
+//        sStrg = strg_points_label.getText();
+//        strg = Integer.parseInt(sStrg);
+//        
+//        sMag = mag_points_label.getText();
+//        mag = Integer.parseInt(sMag);
+//        
+//        sDex = dex_points_label.getText();
+//        dex = Integer.parseInt(sDex);
+//        
+//        sCons = cons_points_label.getText();
+//        cons = Integer.parseInt(sCons);
+//    //-----------------    
         
+        sEspec = combo_especialization.getSelectedItem().toString();        
+        
+       
+    heroVet[pos]=newHero;    
+    
+        System.out.println(pos);
         System.out.println(heroVet[pos].getName());
+        System.out.println("Gender - "+heroVet[pos].getGender()+
+                "\nEspecialization - "+heroVet[pos].getHeroSpec()+
+                "\nMagic - "+heroVet[pos].getMag()+
+                "\nStrenght - "+heroVet[pos].getStr()+
+                "\nDexterity - "+heroVet[pos].getDex()+
+                "\nConstitution - "+heroVet[pos].getCons()+
+                "\nLife Points - "+heroVet[pos].getHp()+
+                "\nMana - "+heroVet[pos].getMana()+
+                "\nHit Chance - "+heroVet[pos].getHitChance()+
+                "\nPhysical Damage - "+heroVet[pos].getPhysDmg()+
+                "\nMagical Damage - "+heroVet[pos].getMagDmg()+
+                "\nArmor - "+heroVet[pos].getArmor());
         
         
         DefaultTableModel model = (DefaultTableModel) heroTable.getModel();
-        String[] coluna = {"","","","","","","","",""};
-        coluna[0] = heroVet[pos].getName();
-        coluna[1] = sSpec;
-        coluna[2] = sGender;
-        coluna[3] = sStrg;
-        coluna[4] = sMag;
-        coluna[5] = sDex;
-        coluna[6] = sCons;
-        coluna[7] = sLifePoints;
-        coluna[8] = sMana;
+        String[] column = {"","","","","","","","","","","","",""};
+        column[0] = heroVet[pos].getName();
+        column[1] = sEspec;
+        column[2] = sGender;
+        column[3] = sMag;
+        column[4] = sStrg;
+        column[5] = sDex;
+        column[6] = sCons;
+        column[7] = sLifePoints;
+        column[8] = sMana;
+        column[9] = sHitChance;
+        column[10] = sPhysDmg;
+        column[11] = sMagDmg;
+        column[12] = sArmor;
         
-        model.addRow(coluna);
+        model.addRow(column);
         
         pos++;
     //---------------------------------------------------
     
-    heroClass = 0;
+    heroEspec = 0;
             
             strg=0;
             dex=0;
@@ -2105,6 +2137,14 @@ public class central_JFrame extends javax.swing.JFrame {
             cons=0;
             lifePoints=0;
             maxLife=0;
+            
+            sGender=null;
+            sStrg="00";
+            sMag="00";
+            sDex="00";
+            sCons="00";
+            sLifePoints="00";
+            sMana="00";
             
             physDmg=0;
             magDmg=0;
@@ -2130,16 +2170,16 @@ public class central_JFrame extends javax.swing.JFrame {
             armor_points_label.setText("000");
             hit_chance_points_label.setText("000");
             
-            combo_specialization.setSelectedIndex(0);
+            combo_especialization.setSelectedIndex(0);
         
     }else{
-        JOptionPane.showMessageDialog(null,"The fields 'Name', 'Specialization' and 'Gender' needs to be filled.","Attention",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"The fields 'Name', 'Specialization' and 'Gender' need to be filled.","Attention",JOptionPane.WARNING_MESSAGE);
     }        
     }//GEN-LAST:event_gen_hero_butActionPerformed
 
     private void strg_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strg_plusActionPerformed
         if(xpPointsToDist>0){
-        if(combo_specialization.getSelectedItem()=="Warrior"){
+        if(combo_especialization.getSelectedItem()=="Warrior"){
             strg+=1;
             xpPointsToDist-=1;
             physDmg+=2;
@@ -2174,7 +2214,7 @@ public class central_JFrame extends javax.swing.JFrame {
 
     private void mag_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mag_plusActionPerformed
         if(xpPointsToDist>0){
-        if(combo_specialization.getSelectedItem()=="Mage"){
+        if(combo_especialization.getSelectedItem()=="Mage"){
             mag+=1;
             xpPointsToDist-=1;
             magDmg+=2;
@@ -2210,7 +2250,8 @@ public class central_JFrame extends javax.swing.JFrame {
     private void dex_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dex_plusActionPerformed
         
        if(xpPointsToDist>0){
-        if(combo_specialization.getSelectedItem()=="Rogue"){
+        if(combo_especialization.getSelectedItem()=="Rogue"){
+            
             dex+=1;
             xpPointsToDist-=1;
             hitChance+=2;
@@ -2318,20 +2359,21 @@ public class central_JFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Central_JFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new central_JFrame().setVisible(true);
+                new Central_JFrame().setVisible(true);
             }
         });
     }
@@ -2358,7 +2400,7 @@ public class central_JFrame extends javax.swing.JFrame {
     private javax.swing.JButton bow_type_but;
     private javax.swing.JButton bronze_weapon_qual;
     private javax.swing.JComboBox<String> combo_armor;
-    private javax.swing.JComboBox<String> combo_specialization;
+    private javax.swing.JComboBox<String> combo_especialization;
     private javax.swing.JComboBox<String> combo_weapon;
     private javax.swing.JButton cons_plus;
     private javax.swing.JLabel cons_points_label;
