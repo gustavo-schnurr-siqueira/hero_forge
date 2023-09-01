@@ -5,10 +5,10 @@ package model;
     import java.sql.ResultSet;
     import java.util.ArrayList;
 
-    public class Hero {
+    public class HeroConstruction {
     
     private String name;
-    private int hp,
+    private int lifePoints,
             maxHp,
             mana,
             maxMana,
@@ -16,8 +16,7 @@ package model;
             magDmg,
             armor,
             hitChance,
-            stamina,
-            str,
+            strg,
             dex,
             mag,
             cons,
@@ -27,36 +26,32 @@ package model;
     
 //----------------METHODS-------------
 
-    public Hero() {
-        
+    public HeroConstruction() {
+  
+    }
+
+    public HeroConstruction(String name, int heroEspec, int gender, int mag, int strg, int dex, int cons, int lifePoints, int mana, int hitChance, int physDmg, int magDmg, int armor) {
+
         this.name=name;
-        this.hp=hp;
-        this.maxHp=maxHp;
+        this.heroSpec=heroEspec;
+        this.gender=gender;
+        this.mag=mag;
+        this.strg=strg;
+        this.dex=dex;
+        this.cons=cons;
+        this.lifePoints=lifePoints;
         this.mana=mana;
-        this.maxMana=maxMana;
+        this.hitChance=hitChance;
         this.physDmg=physDmg;
         this.magDmg=magDmg;
         this.armor=armor;
-        this.hitChance=hitChance;
-        this.stamina=stamina;
-        this.str=str;
-        this.dex=dex;
-        this.mag=mag;
-        this.cons=cons;
-        this.heroSpec=heroSpec;
-        this.gender=gender;
         
     }
-
-    public Hero(String name, int heroEspec, int gender, int mag, int strg, int dex, int cons, int lifePoints, int mana, int hitChance, int physDmg, int magDmg, int armor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-   
-
     
-    public Hero heroCreation(Hero newHero) {
-
+    public HeroConstruction heroCreation(HeroConstruction newHero) {
+        
     HeroDao hd = new HeroDao();
+    System.out.println("Hero Construction - Hero Epec "+newHero.getHeroEspec());
     return hd.heroCreation(newHero);
 
 }
@@ -140,28 +135,21 @@ package model;
         this.gender = gender;
     }
     
-    public int getHp() {
-        return hp;
+    public int getLifePoints() {
+        return lifePoints;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setLifePoints(int lifePoints) {
+        this.lifePoints = lifePoints;
     }
 
-    public int getStamina() {
-        return stamina;
+
+    public int getStrg() {
+        return strg;
     }
 
-    public void setStamina(int stamina) {
-        this.stamina = stamina;
-    }
-
-    public int getStr() {
-        return str;
-    }
-
-    public void setStr(int str) {
-        this.str = str;
+    public void setStrg(int strg) {
+        this.strg = strg;
     }
 
     public int getDex() {
@@ -188,7 +176,7 @@ package model;
         this.cons = cons;
     }
 
-    public int getHeroSpec() {
+    public int getHeroEspec() {
         return heroSpec;
     }
 

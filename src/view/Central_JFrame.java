@@ -11,7 +11,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Hero;
+import model.HeroConstruction;
 
 /**
  *
@@ -70,17 +70,12 @@ public class Central_JFrame extends javax.swing.JFrame {
             sEspec,
             sGender;
     
-    Hero[] heroVet = new Hero [10];    
+    HeroConstruction[] heroVet = new HeroConstruction [10];    
     int pos = 0;
     
 //----------Weapon Gen Variables--------------    
     String weaponName;
     int weapon_type=0;
-            
-    
-    
-    
-    
     
     public Central_JFrame() {
         initComponents();
@@ -1857,7 +1852,7 @@ public class Central_JFrame extends javax.swing.JFrame {
     xpPointsToDist=5;
     
     if (combo_especialization.getSelectedItem()=="Mage"  ){
-            
+            System.out.println("mage");
             heroEspec = 1;
         
             strg=5;
@@ -1866,6 +1861,8 @@ public class Central_JFrame extends javax.swing.JFrame {
             cons=5;
             lifePoints=50;
             maxLife=50;
+            mana=200;
+            maxMana=200;
             
             physDmg=10;
             magDmg=100;
@@ -1890,7 +1887,7 @@ public class Central_JFrame extends javax.swing.JFrame {
             
            
         }else if(combo_especialization.getSelectedItem()=="Rogue"){
-            
+            System.out.println("Rogue");
             heroEspec = 2;
             
             strg=5;
@@ -1899,6 +1896,8 @@ public class Central_JFrame extends javax.swing.JFrame {
             cons=8;
             lifePoints=130;
             maxLife=130;
+            mana=100;
+            maxMana=100;
             
             physDmg=50;
             magDmg=30;
@@ -1923,7 +1922,7 @@ public class Central_JFrame extends javax.swing.JFrame {
 
             
         }else if(combo_especialization.getSelectedItem()=="Warrior"){
-            
+            System.out.println("Warrior");
             heroEspec = 3;
             
             strg=15;
@@ -1932,6 +1931,8 @@ public class Central_JFrame extends javax.swing.JFrame {
             cons=8;
             lifePoints=200;
             maxLife=200;
+            mana=30;
+            maxMana=30;
             
             physDmg=120;
             magDmg=5;
@@ -1956,8 +1957,10 @@ public class Central_JFrame extends javax.swing.JFrame {
             
             
         }else{
-            
+        System.out.println("xuxu beleza");    
             heroEspec = 0;
+            
+            name_text_field.setText("");
             
             strg=0;
             dex=0;
@@ -1965,6 +1968,8 @@ public class Central_JFrame extends javax.swing.JFrame {
             cons=0;
             lifePoints=0;
             maxLife=0;
+            mana=0;
+            maxMana=0;
             
             physDmg=0;
             magDmg=0;
@@ -2022,85 +2027,29 @@ public class Central_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_male_button2ActionPerformed
 
     private void gen_hero_butActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gen_hero_butActionPerformed
-   
-   
+   sName=name_text_field.getText();
     
-    Hero newHero = new Hero(); 
+   
+   
+    HeroConstruction newHero = new HeroConstruction(); 
     GeneralControler genCont = new GeneralControler();
+    sEspec = combo_especialization.getSelectedItem().toString();
     
-    newHero = genCont.createHero(name_text_field.getText(),                                 
-                                 heroEspec,
-                                 gender,
-                                 mag,
-                                 strg,
-                                 dex,
-                                 cons,
-                                 lifePoints,
-                                 mana,
-                                 hitChance,
-                                 physDmg,
-                                 magDmg,
-                                 armor
-                                 );
-    
-    
-    //newHeroTwo = genCont.validatingHero(name_text_field.getText(),combo_specialization.getSelectedIndex(),gender);
-    
-    if(newHero != null){
-//        // - STRING to INT --
-//        sName = name_text_field.getText();
-//        
-//        sLifePoints = life_text_label.getText();
-//        lifePoints=Integer.parseInt(sLifePoints);
-//        
-//        sMaxLife = max_life_text_label.getText();
-//        maxLife=Integer.parseInt(sMaxLife);
-//        
-//        sMana = mana_text_label.getText();
-//        mana = Integer.parseInt(sMana);
-//        
-//        sMaxMana = max_mana_text_label.getText();
-//        maxMana = Integer.parseInt(sMaxMana);
-//        
-//        sArmor = armor_points_label.getText();
-//        armor = Integer.parseInt(sArmor);
-//        
-//        sPhysDmg = phys_dmg_points_label.getText();
-//        physDmg = Integer.parseInt(sPhysDmg);
-//        
-//        sMagDmg = mag_dmg_points_label.getText();
-//        magDmg = Integer.parseInt(sMagDmg);
-//        
-//        sHitChance = hit_chance_points_label.getText();
-//        hitChance = Integer.parseInt(sHitChance);
-//        
-//        sStrg = strg_points_label.getText();
-//        strg = Integer.parseInt(sStrg);
-//        
-//        sMag = mag_points_label.getText();
-//        mag = Integer.parseInt(sMag);
-//        
-//        sDex = dex_points_label.getText();
-//        dex = Integer.parseInt(sDex);
-//        
-//        sCons = cons_points_label.getText();
-//        cons = Integer.parseInt(sCons);
-//    //-----------------    
-        
-        sEspec = combo_especialization.getSelectedItem().toString();        
-        
-       
-    heroVet[pos]=newHero;    
+    System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++   "+newHero.getHeroEspec());
+    newHero = genCont.createHero(sName,heroEspec,gender,mag,strg,dex,cons,lifePoints,mana,hitChance,physDmg,magDmg,armor);
+    heroVet[pos]=newHero;
+        System.out.println("======================================================   "+newHero.getHeroEspec());
+    if(newHero!=null){
     
         System.out.println(pos);
         System.out.println(heroVet[pos].getName());
         System.out.println("Gender - "+heroVet[pos].getGender()+
-                "\nEspecialization - "+heroVet[pos].getHeroSpec()+
+                "\nEspecialization - "+heroVet[pos].getHeroEspec()+
                 "\nMagic - "+heroVet[pos].getMag()+
-                "\nStrenght - "+heroVet[pos].getStr()+
+                "\nStrenght - "+heroVet[pos].getStrg()+
                 "\nDexterity - "+heroVet[pos].getDex()+
                 "\nConstitution - "+heroVet[pos].getCons()+
-                "\nLife Points - "+heroVet[pos].getHp()+
+                "\nLife Points - "+heroVet[pos].getLifePoints()+
                 "\nMana - "+heroVet[pos].getMana()+
                 "\nHit Chance - "+heroVet[pos].getHitChance()+
                 "\nPhysical Damage - "+heroVet[pos].getPhysDmg()+
@@ -2180,8 +2129,9 @@ public class Central_JFrame extends javax.swing.JFrame {
     private void strg_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strg_plusActionPerformed
         if(xpPointsToDist>0){
         if(combo_especialization.getSelectedItem()=="Warrior"){
-            strg+=1;
             xpPointsToDist-=1;
+            
+            strg+=1;            
             physDmg+=2;
         
        
@@ -2194,9 +2144,9 @@ public class Central_JFrame extends javax.swing.JFrame {
             sPhysDmg = Integer.toString(physDmg);
             phys_dmg_points_label.setText(sPhysDmg);
         }else{
-            
-            strg+=1;
             xpPointsToDist-=1;
+            
+            strg+=1;            
             physDmg+=1;
             
             sStrg = Integer.toString(strg);
@@ -2215,8 +2165,9 @@ public class Central_JFrame extends javax.swing.JFrame {
     private void mag_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mag_plusActionPerformed
         if(xpPointsToDist>0){
         if(combo_especialization.getSelectedItem()=="Mage"){
-            mag+=1;
             xpPointsToDist-=1;
+            
+            mag+=1;            
             magDmg+=2;
         
        
@@ -2229,9 +2180,9 @@ public class Central_JFrame extends javax.swing.JFrame {
             sMagDmg = Integer.toString(magDmg);
             mag_dmg_points_label.setText(sMagDmg);
         }else{
-            
-            mag+=1;
             xpPointsToDist-=1;
+            
+            mag+=1;            
             magDmg+=1;
             
             sMag = Integer.toString(mag);
@@ -2251,9 +2202,9 @@ public class Central_JFrame extends javax.swing.JFrame {
         
        if(xpPointsToDist>0){
         if(combo_especialization.getSelectedItem()=="Rogue"){
-            
-            dex+=1;
             xpPointsToDist-=1;
+            
+            dex+=1;            
             hitChance+=2;
         
        
@@ -2266,11 +2217,11 @@ public class Central_JFrame extends javax.swing.JFrame {
             sHitChance = Integer.toString(hitChance);
             hit_chance_points_label.setText(sHitChance);
         }else{
-            
-            dex+=1;
             xpPointsToDist-=1;
+            
+            dex+=1;            
             hitChance+=1;
-        
+       
        
             sDex = Integer.toString(dex);
             dex_points_label.setText(sDex);
@@ -2287,9 +2238,10 @@ public class Central_JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_dex_plusActionPerformed
 
     private void cons_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_plusActionPerformed
-        if(xpPointsToDist>0){        
-            cons+=1;
+        if(xpPointsToDist>0){ 
             xpPointsToDist-=1;
+            
+            cons+=1;            
             lifePoints+=1;
             maxLife+=1;
             armor+=1;

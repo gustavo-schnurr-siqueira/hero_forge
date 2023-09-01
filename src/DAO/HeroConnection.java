@@ -8,13 +8,13 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class HeroConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/gianmercado?zeroDateTimeBehavior=convertToNull";
+    private static final String URL = "jdbc:mysql://localhost:3306/heroforgedb?zeroDateTimeBehavior=convertToNull";
     private static final String USER = "root";
     
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String SENHA = "";
     
-    public static void executar(String query){
+    public static void connect(String query){
         try{
             Class.forName(DRIVER);
             Connection conn = (Connection) DriverManager.getConnection(URL,USER,SENHA);

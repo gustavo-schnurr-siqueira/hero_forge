@@ -1,7 +1,7 @@
 
 package model;
 
-public class Weapon {
+public class WeaponConstruction {
     
     
    String name;

@@ -9,6 +9,6 @@ package model;
  *
  * @author 311100469
  */
-public class Armor {
+public class ArmorConstruction {
     
 }

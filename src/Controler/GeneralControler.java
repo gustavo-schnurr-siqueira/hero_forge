@@ -1,59 +1,59 @@
-
 package Controler;
 
-import model.Hero;
+import model.HeroConstruction;
 
 public class GeneralControler {
-    
+
     //-----------------------------------
-//--Hero Variables----------------------   
-private String name;
-private int hp;
-private int maxHp;
-private int mana;
-private int maxMana;
-private int physDmg;
-private int magDmg;
-private int armor;
-private int hitChance;
-private int stamina;
-private int str;
-private int dex;
-private int mag;
-private int cons;
-private int heroSpec;
-private int gender;
+//--HeroConstruction Variables----------------------   
+    private String name;
+    private int hp;
+    private int maxHp;
+    private int mana;
+    private int maxMana;
+    private int physDmg;
+    private int magDmg;
+    private int armor;
+    private int hitChance;
+    private int stamina;
+    private int str;
+    private int dex;
+    private int mag;
+    private int cons;
+    private int heroEspec;
+    private int gender;
 
 //--Weapon Variables------------------
+    private String ArmorName;
+    private int quality;
+    private int bonus1;
+    private int bonus2;
+    private int bonus3;
+    private int valueBonus1;
+    private int valueBonus2;
+    private int valueBonus3;
 
-private String ArmorName;
-private int quality;
-private int bonus1;
-private int bonus2;
-private int bonus3;
-private int valueBonus1;
-private int valueBonus2;
-private int valueBonus3;
+    HeroConstruction completeHero = new HeroConstruction();
+    HeroConstruction refferenceHero = new HeroConstruction();
 
-Hero completeHero = new Hero();
-Hero refferenceHero = new Hero();
-    
 //-------------MÉTODOS----------------------
-
- //----------creatingHero---------------------------
- 
- public Hero createHero(String name, int heroEspec,int gender, int mag,int strg, int dex,int cons, int lifePoints,int mana, int hitChance,int physDmg, int magDmg, int armor){
-    if (name.equals(null) || heroSpec <=0){
+    //----------creatingHero---------------------------
+    public HeroConstruction createHero(String name, int heroEspec, int gender, int mag, int strg, int dex, int cons, int lifePoints, int mana, int hitChance, int physDmg, int magDmg, int armor) {
+        System.out.println("General Controler - Hero Epec "+heroEspec);
         
-        return null;
+        if (name.equals("") || heroEspec <= 0 || gender <= 0) {
+            System.out.println("\"Entrou no nulo\"");
+            return null;
+        } else {
             
-        }else{
-        Hero newHero = new Hero(name,heroEspec,gender,mag,strg,dex,cons,lifePoints,mana,hitChance,physDmg,magDmg,armor);
-                        
-        return newHero.heroCreation(newHero);
+            HeroConstruction newHero = new HeroConstruction(name, heroEspec, gender, mag, strg, dex, cons, lifePoints, mana, hitChance, physDmg, magDmg, armor);
+            
+            return newHero.heroCreation(newHero);
+            
+        }
     }
-}
- 
+    
+
 //------------------------------------------
     public String getName() {
         return name;
@@ -168,11 +168,11 @@ Hero refferenceHero = new Hero();
     }
 
     public int getHeroSpec() {
-        return heroSpec;
+        return heroEspec;
     }
 
     public void setHeroSpec(int heroSpec) {
-        this.heroSpec = heroSpec;
+        this.heroEspec = heroSpec;
     }
 
     public int getGender() {
@@ -246,8 +246,5 @@ Hero refferenceHero = new Hero();
     public void setValueBonus3(int valueBonus3) {
         this.valueBonus3 = valueBonus3;
     }
-    
 
-    
-   
 }
